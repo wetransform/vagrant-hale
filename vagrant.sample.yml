@@ -1,0 +1,9 @@
+# Configuration for Vagrant box - copy to vagrant.yml
+cpus: 2
+cpucap: 70
+ram: 4096
+defaultShares: true
+# haleDownload: https://github.com/halestudio/hale/releases/download/4.0.0/hale-studio-4.0.0-linux.gtk.x86_64.tar.gz
+# shares:
+#   - host: /home
+#     vm: /h
