@@ -49,7 +49,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     v.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
   end
 
-  # config.vm.network :private_network, ip: options['ip']
+  config.vm.network :private_network, ip: options['ip']
 
   # Provisioning via shell
   config.vm.provision "shell", privileged: true, inline: <<-EOF

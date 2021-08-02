@@ -48,6 +48,7 @@ The file `vagrant.yml` can be used to configure the VM. See `vagrant.sample.yml`
 * **cpus** - Number of virtual CPUs
 * **cpucap** - The CPU execution cap
 * **ram** - The system memory in MB
+* **ip** - The machine's IP address
 * **defaultShares** - If default shares should be mounted; currently this only applies for Windows, where `C:\Users` is available on `/c/Users` in the VM
 * **shares** - List of custom mounted folders, each with the path on the **host** and the **vm**
 * **haleDownload** - Use an alternate URL to download the hale studio Linux installation archive from
