@@ -39,7 +39,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     v.customize ["setextradata", :id, "CustomVideoMode1", "1024x768x32"]
     v.customize ["modifyvm", :id, "--graphicscontroller", "vmsvga"]
     v.customize ["modifyvm", :id, "--vram", "128"]
-    v.customize ["modifyvm", :id, "--audio", "pulse"]
+    if Vagrant::Util::Platform.windows?
+      v.customize ["modifyvm", :id, "--audio", "dsound"]
+    elsif Vagrant::Util::Platform.darwin?
+      v.customize ["modifyvm", :id, "--audio", "coreaudio"]
+    else
+      v.customize ["modifyvm", :id, "--audio", "pulse"]
+    end
     v.customize ["modifyvm", :id, "--audiocontroller", "ac97"]
     v.customize ["modifyvm", :id, "--audioout", "on"]
     v.customize ["modifyvm", :id, "--ioapic", "on"]
